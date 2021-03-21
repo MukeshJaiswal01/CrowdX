@@ -1,0 +1,46 @@
+h1{
+
+	color :#095179;
+	font-size: 40px;
+	font-weight: bolder;
+	margin-left: 390px;
+}
+
+body{
+
+
+
+	}
+
+img{
+
+	margin-top: -10px;
+}
+
+
+
+a{
+	text-decoration: none;
+	color: white;
+	font-weight: bolder;
+
+
+
+}
+
+.container{
+
+	position: relative;
+}
+
+.container .content {
+  
+  margin-top: 10px;
+  margin-left: 580px;
+  background-color: #11a4bf; /* Fallback color */
+  opacity: 0.8; /* Black background with 0.5 opacity */
+  color: white;
+  width: 10%;
+  padding: 20px;
+
+}
