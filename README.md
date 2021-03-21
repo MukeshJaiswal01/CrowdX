@@ -1,1 +1,1 @@
-# CrowdX
+# CrowdX - Next Gen Funding
