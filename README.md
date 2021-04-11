@@ -10,7 +10,7 @@
 <br>
 <br>
 <br>
-# Platform for organizing the CrowdX Funding
+<h1> Platform for organizing the CrowdX Funding </h1>
 <br>
 <img src="https://siasky.net/vADUk2tpstwM_VIpl2Sue0Y4Sw1UT0T_VXk3FxS7LuApgQ">
 <br><br>
