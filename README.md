@@ -15,6 +15,6 @@
 <img src="https://siasky.net/vADUk2tpstwM_VIpl2Sue0Y4Sw1UT0T_VXk3FxS7LuApgQ">
 <br><br>
 
-# Funding can be for any thing like for ex - Mainnet Launcing
+#  Funding can be for any thing like for ex - Mainnet Launcing
 <br>
 <img src="https://siasky.net/TABvIXnt6XSR0aNMATNwFpKvnDSl4NWkqnWehip7vlbA4g">
