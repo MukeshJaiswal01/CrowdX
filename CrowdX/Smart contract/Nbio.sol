@@ -38,6 +38,9 @@ contract NBio is ERC721 {
      // mapping of investor to its share
         mapping(address => uint) public shares_of_investor;
      
+     // mapping of bond to its price
+        mapping(uint => uint) bondPrice
+       
      constructor(address _btoken) ERC721("IBOND", "IBO") public {
          
          Owner = msg.sender;
