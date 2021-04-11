@@ -41,7 +41,7 @@ contract NBio is ERC721 {
      constructor(address _btoken) ERC721("IBOND", "IBO") public {
          
          Owner = msg.sender;
-         Btoken = IERC20(_btoken);
+         Btoken = IERC20(_btoken);  // bond Token
          
          
      }
@@ -56,7 +56,7 @@ contract NBio is ERC721 {
          
     //
     
- // deposit the token to issue the bond
+ // user deposit the token(like usdc) to issue the bond
          
     function deposit( uint No_of_bond_to_issue, string calldata _uri) external payable{
         
@@ -100,6 +100,8 @@ contract NBio is ERC721 {
         
     }
      
+
+     // get URL of bond
     function getBondUri(uint Id) external view returns (string memory){
         
          require(ownerOf(Id) == msg.sender, "not an owner of this token");
