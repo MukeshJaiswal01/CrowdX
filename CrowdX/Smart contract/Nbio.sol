@@ -2,6 +2,7 @@ pragma solidity ^0.6.6;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import ""@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol"";
 
 
 contract NBio is ERC721 {
@@ -40,11 +41,15 @@ contract NBio is ERC721 {
      
      // mapping of bond to its price
         mapping(uint => uint) bondPrice
+        
+    // chainling aggregrator    
+      AggregatorInterface internal ref;
        
-     constructor(address _btoken) ERC721("IBOND", "IBO") public {
+     constructor(address _btoken, address _agr) ERC721("IBOND", "IBO") public {
          
          Owner = msg.sender;
          Btoken = IERC20(_btoken);  // bond Token
+         ref = AggregatorV3Interface(_agr);  // usdc price oracle address
          
          
      }
@@ -71,6 +76,8 @@ contract NBio is ERC721 {
         for(uint i = 0; i < No_of_bond_to_issue; i++){
             _safeMint(msg.sender, TokenId );
              _setTokenURI(TokenId, _uri); 
+             uint price = getLatestprice();
+             bondePrice[TokenId] = price;   // setting price of each bond
              TokenId++;
 
             
@@ -113,6 +120,19 @@ contract NBio is ERC721 {
          
         
     }
+    
+    // current price of usdc
+   function getThePrice() public view returns (int) {
+        (
+            uint80 roundID, 
+            int price,
+            uint startedAt,
+            uint timeStamp,
+            uint80 answeredInRound
+        ) = priceFeed.latestRoundData();
+        return price;
+    }
+    
     
     function balance() external view  returns(uint) {
 
