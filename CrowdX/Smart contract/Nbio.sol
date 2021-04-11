@@ -43,13 +43,13 @@ contract NBio is ERC721 {
         mapping(uint => uint) bondPrice
         
     // chainling aggregrator    
-      AggregatorInterface internal ref;
+      AggregatorInterface internal priceFeed;
        
      constructor(address _btoken, address _agr) ERC721("IBOND", "IBO") public {
          
          Owner = msg.sender;
          Btoken = IERC20(_btoken);  // bond Token
-         ref = AggregatorV3Interface(_agr);  // usdc price oracle address
+         priceFeed = AggregatorV3Interface(_agr);  // usdc price oracle address
          
          
      }
@@ -76,7 +76,7 @@ contract NBio is ERC721 {
         for(uint i = 0; i < No_of_bond_to_issue; i++){
             _safeMint(msg.sender, TokenId );
              _setTokenURI(TokenId, _uri); 
-             uint price = getLatestprice();
+             uint price = getTheprice();
              bondePrice[TokenId] = price;   // setting price of each bond
              TokenId++;
 
